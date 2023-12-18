@@ -1,0 +1,34 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: GarageSale
+    network: {{network}}
+    source:
+      address: "{{garage_sale}}"
+      abi: GarageSale
+      startBlock: {{start_block}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Protocol
+        - Collection
+        - Bundle
+      abis:
+        - name: GarageSale
+          file: ./abis/GarageSale.json
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: TokenUpdated(indexed address,uint16)
+          handler: handleTokenUpdated
+        - event: Sell(indexed address,indexed address,uint16,uint256,uint256)
+          handler: handleSell
+        - event: Buy(indexed address,address[],uint16[],uint256[],uint256[])
+          handler: handleBuy
+      file: ./src/mapping.ts

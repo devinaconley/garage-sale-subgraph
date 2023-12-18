@@ -1,0 +1,28 @@
+type Protocol @entity {
+  id: ID!
+  sold: BigInt! # items sold to protocol
+  bought: BigInt! # bundles bought on auction from protocol
+  inventory: BigInt! # current inventory size
+  volume: BigInt! # total eth volume
+  incoming: BigInt! # total eth in from auctions
+  outgoing: BigInt! # total eth out
+}
+
+enum TokenType {
+  Unknown
+  ERC721
+  ERC1155
+}
+
+type Collection @entity {
+  id: ID!
+  name: String!
+  type: TokenType!
+}
+
+type Bundle @entity {
+  id: ID!
+  timestamp: BigInt!
+  buyer: String!
+  # items: [Item!]!
+}
