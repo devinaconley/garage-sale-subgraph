@@ -7,3 +7,5 @@ export const ZERO_DECIMAL = BigDecimal.fromString('0');
 
 export const ONE_INT = BigInt.fromI32(1);
 export const ONE_DECIMAL = BigDecimal.fromString('1.0');
+
+export const OFFER = BigDecimal.fromString('0.000001');

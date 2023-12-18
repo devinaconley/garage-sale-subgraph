@@ -3,9 +3,9 @@ type Protocol @entity {
   sold: BigInt! # items sold to protocol
   bought: BigInt! # bundles bought on auction from protocol
   inventory: BigInt! # current inventory size
-  volume: BigInt! # total eth volume
-  incoming: BigInt! # total eth in from auctions
-  outgoing: BigInt! # total eth out
+  volume: BigDecimal! # total eth volume
+  received: BigDecimal! # total eth received from auctions
+  sent: BigDecimal! # total eth sent
 }
 
 enum TokenType {
@@ -22,7 +22,8 @@ type Collection @entity {
 
 type Bundle @entity {
   id: ID!
-  timestamp: BigInt!
+  auction: BigInt! # auction window start timestamp
   buyer: String!
+  price: BigDecimal!
   # items: [Item!]!
 }
