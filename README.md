@@ -26,3 +26,15 @@ build subgraph
 ```
 npm run build
 ```
+
+## deploy
+
+set access token for graph hosted service
+```
+npx graph auth https://api.thegraph.com/deploy/ <access token>
+```
+
+deploy to sepolia
+```
+npm run deploy:sepolia
+```
