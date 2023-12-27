@@ -1,5 +1,5 @@
 {
   "network": "mainnet",
-  "garage_sale": "0xabcd",
-  "start_block": 1000
+  "garage_sale": "0x0000000073Ee8862c5E6FaAcfb0Db4cD819C3760",
+  "start_block": 18875647
 }
