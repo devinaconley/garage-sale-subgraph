@@ -6,11 +6,11 @@
     "build": "graph build",
     "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:sepolia": "mustache config/sepolia.json subgraph.template.yaml > subgraph.yaml",
-    "deploy:mainnet": "npm run prepare:mainnet && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ devinaconley/garage-sale",
-    "deploy:sepolia": "npm run prepare:sepolia && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ devinaconley/garage-sale-sepolia"
+    "deploy:mainnet": "npm run prepare:mainnet && graph deploy garage-sale",
+    "deploy:sepolia": "npm run prepare:sepolia && graph deploy garage-sale-sepolia"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.64.0",
+    "@graphprotocol/graph-cli": "^0.90.1",
     "@graphprotocol/graph-ts": "^0.32.0",
     "mustache": "^4.2.0"
   }

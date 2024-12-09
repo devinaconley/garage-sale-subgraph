@@ -31,7 +31,7 @@ npm run build
 
 set access token for graph hosted service
 ```
-npx graph auth https://api.thegraph.com/deploy/ <access token>
+npx graph auth <access token>
 ```
 
 deploy to sepolia
